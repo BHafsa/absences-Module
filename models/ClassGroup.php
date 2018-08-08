@@ -58,4 +58,10 @@ class ClassGroup extends \yii\db\ActiveRecord
     {
           return $this->hasOne(Level::className(),['level_id' => 'level_id']) ->one();
     }
+
+
+    public function getCourse()
+    {
+        return $this->hasMany(Course::className(),['course_id' => 'course_id']);
+    }
 }

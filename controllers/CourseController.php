@@ -33,10 +33,10 @@ class CourseController extends Controller
      * Lists all Course models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($class_group_id)
     {
         $searchModel = new CourseSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->customSearch($class_group_id);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

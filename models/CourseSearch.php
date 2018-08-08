@@ -70,4 +70,17 @@ class CourseSearch extends Course
 
         return $dataProvider;
     }
+
+    public function customSearch($classGroupid)
+    {
+        $query = Course::find()
+                        ->join('right join','tbl_instructor_class_group','tbl_instructor_class_group.course_id = course.course_id')
+                        ->where(['tbl_instructor_class_group.class_group_id'=>$classGroupid]);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+        return $dataProvider;
+    
+    }
 }

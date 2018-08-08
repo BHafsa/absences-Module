@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         [
             'attribute'=>'Niveau',
             'format' => 'raw',
-            'value'=> function ($model) { return  Html::a($model->getLevelObject()->getLabel() ,['course/index&class_groupid='.$model->id]);},
+            'value'=> function ($model) { return  Html::a($model->getLevelObject()->getLabel() ,['course/index','class_group_id'=>$model->class_group_id]);},
         ],
           
      ],

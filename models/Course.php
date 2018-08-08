@@ -50,4 +50,9 @@ class Course extends \yii\db\ActiveRecord
             'educational_unit_id' => 'Educational Unit ID',
         ];
     }
+
+    public function getClassGroup()
+    {
+        return $this->hasMany(ClassGroup::className(),['class_group_id' => 'class_group_id']);
+    }
 }
